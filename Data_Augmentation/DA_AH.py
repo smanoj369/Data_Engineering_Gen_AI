@@ -1,8 +1,12 @@
 import json
 import pandas as pd
 from openai import OpenAI
+import numpy as np
 
-client = OpenAI()
+
+
+
+client = OpenAI(api_key='*****************************')
 
 # Prompt for synthetic Huberman-inspired fitness data
 prompt = """
@@ -25,7 +29,7 @@ Return the output in JSON format.
 
 # Generate response in JSON format
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gpt-5",
     messages=[{"role": "user", "content": prompt}],
     response_format={"type": "json_object"}
 )
